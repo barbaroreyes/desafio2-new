@@ -306,13 +306,14 @@
 
             <div class="col-lg-5">
                 <div class=" d-flex text-center gap-3 mt-4">
-                    <p class="hero-hover-palabras hover-palabra-active">importante</p>
-                    <p class="hero-hover-palabras">El ultimo</p>
-                    <p class="hero-hover-palabras">Arriba</p>
+                    <p class="hero-hover-palabras" id="importante">importante</p>
+                    <p class="hero-hover-palabras" id="el-ultimo">El ultimo</p>
+                    <p class="hero-hover-palabras" id="top">top</p>
 
                 </div>
-                <div class="card mb-3">
-                    <img src="./img/kubernete.png" class="card-img-top" alt="...">
+                <div class="card mb-3" id="card-ocultar">
+                    <img id="image-importante" src="./img/kubernete.png" class="card-img-top" alt="...">
+                    <img id="image-el-ultimo" src="./img/dev-card-morada.png" class="card-img-top hidden" alt="...">
                     <div class="card-body">
                         <div class="hero-card-superposicionar">
                             <div class="card-body d-flex justify-content-start align-items-center ">
@@ -361,47 +362,8 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
-                    <div class="p-4 pb-0 d-flex justify-content-start align-items-center her-3-foto-name-date">
-                        <img src="./img/perfil/pexels-jeferson-santos-4.jpg"
-                            class="hero-3-imagen-perfil card-img-top rounded-circle m-2"
-                            alt="chica posandojunto a una piedra">
-                        <div class="hero-3-info-hover d-flex flex-column gap-0">
-                            <h6 class="hero-3-title-perfil ">Pradumma Saraf</h6>
-                            <p class="hero-3-date-perfil">28 de mayo</p>
-                        </div>
-                    </div>
-                    <div class="card-body her-3-foto-name-date">
-                        <p class="card-text">Como utilizar indicadores de funciones para implementaciones
-                            por etapas
-                        </p>
+                <div id="card-container">
 
-                        <div class="hero-hastah">
-                            <button type="button" class="btn btn-custom"><span class="azul">#</span>fuente
-                                abierta</button>
-                            <button type="button" class="btn btn-custom"><span class="verde">#</span>
-                                devops</button>
-                            <button type="button" class="btn btn-custom"><span
-                                    class="rosado">#</span>desarrollador</button>
-                            <button type="button" class="btn btn-custom"><span
-                                    class="rosado">#</span>desarrollo</button>
-                        </div>
-                        <div class="hero-caras-animaciones d-flex justify-content-center align-items-center ">
-                            <button type="button" class="btn btn-secondary btn-lg ">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <p class="hero-emogi mb-0">&#129505;</p>15
-                                    reaccion
-                                </div>
-                            </button>
-                            <button type="button" class="btn btn-secondary btn-lg d-flex">
-                                <i class="bi bi-chat"></i>add comentarios</button>
-                            <div class="hero-minute d-flex justify-content-center ms-auto">
-
-                                <p class="hero-11">4 min read</p>
-                                <i class="icon-book bi bi-bookmark"></i>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -411,53 +373,18 @@
                         <li class="list-group-item">
                             <h6>#css</h6>
                         </li>
-                        <li class="list-group-item">
-                            <a href="" id="ccsList">Post CCS 1</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="ccsList">Post CCS 2</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="ccsList">Post CCS 3</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="ccsList">Post CCS 4</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="ccsList">Post CCS 5</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
+
+
                     </ul>
                 </div>
+
+
                 <div class="cardList" id="javascriptPosts">
                     <ul class="list-group">
                         <li class="list-group-item">
                             <h6>#javascript</h6>
                         </li>
-                        <li class="list-group-item">
-                            <a href="" id="javascriptList">Post Javascript 1</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="javascriptList">Post Javascript 2</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="javascriptList">Post Javascript 3</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="javascriptList">Post Javascript 4</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="javascriptList">Post Javascript 5</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
+
                     </ul>
                 </div>
                 <div class="cardList" id="reactPosts">
@@ -465,26 +392,7 @@
                         <li class="list-group-item">
                             <h6>#react</h6>
                         </li>
-                        <li class="list-group-item">
-                            <a href="" id="reactList">Post React 1</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="reactList">Post React 2</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="reactList">Post React 3</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="reactList">Post React 4</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="" id="reactList">Post React 5</a>
-                            <p id="commentsList">2 comments</p>
-                        </li>
+
                     </ul>
                 </div>
                 <!--aside right si fondo ni border-->
@@ -571,7 +479,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-        <script src="main.js"></script>
+        <script src="./js/main.js" type="module"></script>
+        <script src="./js/botones.js"></script>
 </body>
 
 </html>

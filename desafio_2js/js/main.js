@@ -5,40 +5,73 @@ getAllPosts();
 
 const cardContainer = document.getElementById("card-container");
 const ccsPosts = document.getElementById("ccsPosts");
+ const javascriptPosts = document.getElementById("javascriptPosts");
+ const reactPosts = document.getElementById("reactPosts");
+ let hashtagList  = document.getElementById("hashtagList");
+const cardList = document.getElementsByClassName("cardList");
+
 
 const printAllPost = async () => {
+
   let posts = await getAllPosts();
   posts.forEach((post) => {
-    console.log(post.tag,"tags")
+
+  
  const divContainer = document.createElement("div");
  divContainer.classList = "card mb-3 p-4";
- const imageContainer = document.createElement("img");
- imageContainer.setAttribute("src", post.picture);
- imageContainer.style.width=("10%") ;
- imageContainer.style.borderRadius=("50%") ;
- const h5 = document.createElement("h5");
-h5.classList.add("card-text")
- h5.textContent = post.title;
-
-   divContainer.append(imageContainer,h5);
+    const imageContainer = document.createElement("img");
+    imageContainer.setAttribute("src", post.picture);
+    imageContainer.style.width=("10%") ;
+    imageContainer.style.borderRadius=("50%") ;
+    const h5 = document.createElement("h5");
+    h5.classList.add("card-text")
+    h5.textContent = post.title;
+    divContainer.append(imageContainer,h5);
     cardContainer.append(divContainer);
+    
   });
+
+
 };
 printAllPost();
 
-const createCardNew = (item)=>{
-  const divContainer = document.createElement("div");
-  divContainer.classList = "card mb-3 p-4";
-  const imageContainer = document.createElement("img");
-  imageContainer.setAttribute("src", item.picture);
-  imageContainer.style.width=("10%") ;
-  imageContainer.style.borderRadius=("50%") ;
-  const h5 = document.createElement("h5");
- h5.classList.add("card-text")
-}
-createCardNew()
 
+const printByTags = async () => {
+    const posts = await getAllPosts();
+    
+    // Ensure lists are defined in your HTML
+    const cssList = document.getElementById('cssList');
+    const javascriptList = document.getElementById('javascriptList');
+    const reactList = document.getElementById('reactList');
+    const hashtagList = document.getElementById('hashtagList');
 
+    // Clear previous list items
+    cssList.innerHTML = '';
+    javascriptList.innerHTML = '';
+    reactList.innerHTML = '';
+    hashtagList.innerHTML = '';
+
+    posts.forEach((post) => {
+        let li = document.createElement("li");
+        li.textContent = post.title;
+
+        if (post.tags.includes('css')) {
+            cssList.appendChild(li);
+        } else if (post.tags.includes('javascript')) {
+            javascriptList.appendChild(li);
+        } else if (post.tags.includes('react')) {
+            reactList.appendChild(li);
+        } else {
+            // If no specific tag is matched, add to hashtagList
+            hashtagList.appendChild(li);
+        }
+    });
+
+    return 'Posts have been categorized and displayed by tags';
+};
+
+// Call the function to execute
+printByTags();
 
 // Función para crear elementos DOM y agregarlos a las listas correspondientes
 const renderPosts = async (postsByHashtag) => {

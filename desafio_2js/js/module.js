@@ -18,7 +18,7 @@ const renderPosts = (posts) => {
         if (posts.hasOwnProperty(key)) {
             const post = posts[key];
             const postElement = document.createElement('div');
-            postElement.className = 'post';
+            postElement.className = 'post card mb-3 p-4 w-20';
             postElement.innerHTML = `
                 <h2>${post.title}</h2>
                 <img src="${post.picture}" alt="${post.name}">

@@ -5,6 +5,7 @@ getAllPosts();
 
 const cardContainer = document.getElementById("card-container");
 const ccsPosts = document.getElementById("ccsPosts");
+
 const printAllPost = async () => {
   let posts = await getAllPosts();
   posts.forEach((post) => {
@@ -15,30 +16,29 @@ const printAllPost = async () => {
  imageContainer.setAttribute("src", post.picture);
  imageContainer.style.width=("10%") ;
  imageContainer.style.borderRadius=("50%") ;
-const tagValidition = async () => {
-  posts.forEach((post) => {
-    if (post.tag.includes("css") && postsByHashtag["#css"].length < 5) {
-      postsByHashtag["#css"].push(post);
-    }
-    if (
-      post.tag.includes("javascript") &&
-      postsByHashtag["#javascript"].length < 5
-    ) {
-      postsByHashtag["#javascript"].push(post);
-    }
-    if (post.tag.includes("react") && postsByHashtag["#react"].length < 5) {
-      postsByHashtag["#react"].push(post);
-    }
-  });
-};
- tagValidition()
  const h5 = document.createElement("h5");
+h5.classList.add("card-text")
  h5.textContent = post.title;
-   divContainer.appendChild(imageContainer,h5);
+
+   divContainer.append(imageContainer,h5);
     cardContainer.append(divContainer);
   });
 };
 printAllPost();
+
+const createCardNew = (item)=>{
+  const divContainer = document.createElement("div");
+  divContainer.classList = "card mb-3 p-4";
+  const imageContainer = document.createElement("img");
+  imageContainer.setAttribute("src", item.picture);
+  imageContainer.style.width=("10%") ;
+  imageContainer.style.borderRadius=("50%") ;
+  const h5 = document.createElement("h5");
+ h5.classList.add("card-text")
+}
+createCardNew()
+
+
 
 // Función para crear elementos DOM y agregarlos a las listas correspondientes
 const renderPosts = async (postsByHashtag) => {
@@ -59,7 +59,7 @@ const printAllPosts = async (hastag) => {
     
   return filterByTag;
 };
-console.log(printAllPosts());
+printAllPosts();
 
 
 

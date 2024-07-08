@@ -4,13 +4,38 @@ import { getAllPosts } from "./module.js";
 getAllPosts();
 
 const cardContainer = document.getElementById("card-container");
-
+const ccsPosts = document.getElementById("ccsPosts");
 const printAllPost = async () => {
   let posts = await getAllPosts();
   posts.forEach((post) => {
-    const li = document.createElement("li");
-    li.textContent = post.title;
-    cardContainer.append(li);
+    console.log(post.tag,"tags")
+ const divContainer = document.createElement("div");
+ divContainer.classList = "card mb-3 p-4";
+ const imageContainer = document.createElement("img");
+ imageContainer.setAttribute("src", post.picture);
+ imageContainer.style.width=("10%") ;
+ imageContainer.style.borderRadius=("50%") ;
+const tagValidition = async () => {
+  posts.forEach((post) => {
+    if (post.tag.includes("css") && postsByHashtag["#css"].length < 5) {
+      postsByHashtag["#css"].push(post);
+    }
+    if (
+      post.tag.includes("javascript") &&
+      postsByHashtag["#javascript"].length < 5
+    ) {
+      postsByHashtag["#javascript"].push(post);
+    }
+    if (post.tag.includes("react") && postsByHashtag["#react"].length < 5) {
+      postsByHashtag["#react"].push(post);
+    }
+  });
+};
+ tagValidition()
+ const h5 = document.createElement("h5");
+ h5.textContent = post.title;
+   divContainer.appendChild(imageContainer,h5);
+    cardContainer.append(divContainer);
   });
 };
 printAllPost();
@@ -31,29 +56,12 @@ const printAllPosts = async (hastag) => {
   let posts = await getAllPosts();
   let filterByTag = posts
     .map((post) => post.tags)
-    .filter((tag) => {
-      return tag === hastag;
-    });
-  console.log(filterByTag);
+    
+  return filterByTag;
 };
-printAllPosts("react");
+console.log(printAllPosts());
 
-const tagValidition = async () => {
-  posts.forEach((post) => {
-    if (post.tags.includes("css") && postsByHashtag["#css"].length < 5) {
-      postsByHashtag["#css"].push(post);
-    }
-    if (
-      post.tags.includes("javascript") &&
-      postsByHashtag["#javascript"].length < 5
-    ) {
-      postsByHashtag["#javascript"].push(post);
-    }
-    if (post.tags.includes("react") && postsByHashtag["#react"].length < 5) {
-      postsByHashtag["#react"].push(post);
-    }
-  });
-};
+
 
 // const renderPosts = (posts) => {
 //   const postsContainer = document.getElementById("posts");
